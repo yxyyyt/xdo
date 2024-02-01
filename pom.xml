@@ -8,6 +8,9 @@
     <artifactId>xdo</artifactId>
     <version>${revision}</version>
     <packaging>pom</packaging>
+    <modules>
+        <module>xdo-lib</module>
+    </modules>
 
     <properties>
         <revision>1.0-SNAPSHOT</revision>

@@ -1,0 +1,8 @@
+global=100
+
+[app]
+test=1
+name=hi
+
+[home]
+addr=abc.city
