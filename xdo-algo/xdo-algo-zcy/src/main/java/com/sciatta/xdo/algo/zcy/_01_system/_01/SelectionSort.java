@@ -13,33 +13,33 @@ import java.util.Arrays;
  */
 public class SelectionSort {
 
-    public static void actual(int[] data) {
-        for (int i = 0; i < data.length; i++) {
+    public static void actual(int[] nums) {
+        for (int i = 0; i < nums.length; i++) {
             int minIndex = i;
-            for (int j = i + 1; j < data.length; j++) {
-                minIndex = data[minIndex] < data[j] ? minIndex : j;
+            for (int j = i + 1; j < nums.length; j++) {
+                minIndex = nums[minIndex] < nums[j] ? minIndex : j;
             }
-            ArrayUtil.swap(data, i, minIndex);
+            ArrayUtil.swap(nums, i, minIndex);
         }
     }
 
-    public static void expected(int[] data) {
-        Arrays.sort(data);
+    public static void expected(int[] nums) {
+        Arrays.sort(nums);
     }
 
     public static void main(String[] args) {
         ExecuteUtil.execute(() -> {
-            int[] data = RandomUtil.randomIntNumberArray(100, 100);
+            int[] nums = RandomUtil.randomIntNumberArray(100, 100);
 
-            int[] actualData = ArrayUtil.copy(data);
-            int[] expectedData = ArrayUtil.copy(data);
+            int[] actualNums = ArrayUtil.copy(nums);
+            int[] expectedNums = ArrayUtil.copy(nums);
 
-            actual(actualData);
-            expected(expectedData);
+            actual(actualNums);
+            expected(expectedNums);
 
-            ArrayUtil.equal(actualData, expectedData, data);
+            ArrayUtil.equal(actualNums, actualNums, nums);
 
-        }, 1, ExecuteUtil.MILLION_TIMES, SelectionSort.class);
+        }, 1, ExecuteUtil.A_MILLION_TIMES, SelectionSort.class);
     }
 
 }

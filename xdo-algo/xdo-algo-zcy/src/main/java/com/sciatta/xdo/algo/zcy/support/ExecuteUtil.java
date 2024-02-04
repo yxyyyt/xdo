@@ -11,9 +11,19 @@ import java.util.concurrent.atomic.AtomicLong;
  */
 public class ExecuteUtil {
     /**
-     * 执行一百万次
+     * 一百万次
      */
-    public static final int MILLION_TIMES = 1000000;
+    public static final int A_MILLION_TIMES = 1000000;
+
+    /**
+     * 一万次
+     */
+    public static final int Ten_Thousand_Times = 10000;
+
+    /**
+     * 一千次
+     */
+    public static final int A_THOUSAND_TIMES = 1000;
 
     public static void execute(Runnable runnable, int threads, int times, Class<?> service) {
         AtomicLong l = new AtomicLong(0);

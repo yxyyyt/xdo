@@ -12,34 +12,34 @@ import java.util.Arrays;
  * 插入排序
  */
 public class InsertSort {
-    public static void actual(int[] data) {
-        for (int i = 1; i < data.length; i++) {
-            int comp = data[i];
+    public static void actual(int[] nums) {
+        for (int i = 1; i < nums.length; i++) {
+            int comp = nums[i];
             int j = i - 1;
-            while (j >= 0 && data[j] > comp) {
-                data[j + 1] = data[j];
+            while (j >= 0 && nums[j] > comp) {
+                nums[j + 1] = nums[j];
                 j--;
             }
-            data[j + 1] = comp;
+            nums[j + 1] = comp;
         }
     }
 
-    public static void expected(int[] data) {
-        Arrays.sort(data);
+    public static void expected(int[] nums) {
+        Arrays.sort(nums);
     }
 
     public static void main(String[] args) {
         ExecuteUtil.execute(() -> {
-            int[] data = RandomUtil.randomIntNumberArray(100, 100);
+            int[] nums = RandomUtil.randomIntNumberArray(100, 100);
 
-            int[] actualData = ArrayUtil.copy(data);
-            int[] expectedData = ArrayUtil.copy(data);
+            int[] actualNums = ArrayUtil.copy(nums);
+            int[] expectedNums = ArrayUtil.copy(nums);
 
-            actual(actualData);
-            expected(expectedData);
+            actual(actualNums);
+            expected(expectedNums);
 
-            ArrayUtil.equal(actualData, expectedData, data);
+            ArrayUtil.equal(actualNums, expectedNums, nums);
 
-        }, 1, ExecuteUtil.MILLION_TIMES, InsertSort.class);
+        }, 1, ExecuteUtil.A_MILLION_TIMES, InsertSort.class);
     }
 }

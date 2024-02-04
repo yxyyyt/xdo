@@ -1,5 +1,7 @@
 package com.sciatta.xdo.algo.zcy.support;
 
+import java.util.Arrays;
+
 /**
  * Created by Rain on 2024/2/2<br>
  * All Rights Reserved(C) 2017 - 2024 SCIATTA <br> <p/>
@@ -57,6 +59,12 @@ public class RandomUtil {
             }
         }
 
+        return nums;
+    }
+
+    public static int[] randomIntNumberArrayWithSort(int maxSize, int maxNumber) {
+        int[] nums = randomIntNumberArray(maxSize, maxNumber);
+        Arrays.sort(nums);
         return nums;
     }
 

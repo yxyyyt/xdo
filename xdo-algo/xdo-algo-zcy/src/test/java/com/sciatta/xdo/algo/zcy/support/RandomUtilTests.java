@@ -21,7 +21,7 @@ public class RandomUtilTests {
             int test = RandomUtil.randomIntNumber(100);
             min.set(Math.min(test, min.get()));
             max.set(Math.max(test, max.get()));
-        }, 1, ExecuteUtil.MILLION_TIMES, RandomUtilTests.class);
+        }, 1, ExecuteUtil.A_MILLION_TIMES, RandomUtilTests.class);
 
         PrintUtil.log("min={}, max={}", min.get(), max.get());
     }
@@ -35,7 +35,7 @@ public class RandomUtilTests {
             int test = RandomUtil.randomPositiveIntNumber(100);
             min.set(Math.min(test, min.get()));
             max.set(Math.max(test, max.get()));
-        }, 1, ExecuteUtil.MILLION_TIMES, RandomUtilTests.class);
+        }, 1, ExecuteUtil.A_MILLION_TIMES, RandomUtilTests.class);
 
         PrintUtil.log("min={}, max={}", min.get(), max.get());
     }
@@ -56,7 +56,7 @@ public class RandomUtilTests {
                 numberMin.set(Math.min(i, numberMin.get()));
                 numberMax.set(Math.max(i, numberMax.get()));
             }
-        }, 1, ExecuteUtil.MILLION_TIMES, RandomUtilTests.class);
+        }, 1, ExecuteUtil.A_MILLION_TIMES, RandomUtilTests.class);
 
         PrintUtil.log("sizeMin={}, sizeMax={}, numberMin={}, numberMax={}",
                 sizeMin.get(), sizeMax.get(), numberMin.get(), numberMax.get());
@@ -78,7 +78,7 @@ public class RandomUtilTests {
                 numberMin.set(Math.min(i, numberMin.get()));
                 numberMax.set(Math.max(i, numberMax.get()));
             }
-        }, 1, ExecuteUtil.MILLION_TIMES, RandomUtilTests.class);
+        }, 1, ExecuteUtil.A_MILLION_TIMES, RandomUtilTests.class);
 
         PrintUtil.log("sizeMin={}, sizeMax={}, numberMin={}, numberMax={}",
                 sizeMin.get(), sizeMax.get(), numberMin.get(), numberMax.get());
@@ -101,7 +101,7 @@ public class RandomUtilTests {
                     assertNotEquals(ans[i], ans[i + 1]);
                 }
             }
-        }, 1, ExecuteUtil.MILLION_TIMES, RandomUtilTests.class);
+        }, 1, ExecuteUtil.A_MILLION_TIMES, RandomUtilTests.class);
     }
 
 }

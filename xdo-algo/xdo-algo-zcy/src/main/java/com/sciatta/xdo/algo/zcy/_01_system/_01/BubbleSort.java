@@ -12,32 +12,32 @@ import java.util.Arrays;
  * 冒泡排序
  */
 public class BubbleSort {
-    public static void actual(int[] data) {
-        for (int i = 0; i < data.length; i++) {
-            for (int j = 0; j < data.length - 1; j++) {
-                if (data[j] > data[j + 1]) {
-                    ArrayUtil.swap(data, j, j + 1);
+    public static void actual(int[] nums) {
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = 0; j < nums.length - 1; j++) {
+                if (nums[j] > nums[j + 1]) {
+                    ArrayUtil.swap(nums, j, j + 1);
                 }
             }
         }
     }
 
-    public static void expected(int[] data) {
-        Arrays.sort(data);
+    public static void expected(int[] nums) {
+        Arrays.sort(nums);
     }
 
     public static void main(String[] args) {
         ExecuteUtil.execute(() -> {
-            int[] data = RandomUtil.randomIntNumberArray(100, 100);
+            int[] nums = RandomUtil.randomIntNumberArray(100, 100);
 
-            int[] actualData = ArrayUtil.copy(data);
-            int[] expectedData = ArrayUtil.copy(data);
+            int[] actualNums = ArrayUtil.copy(nums);
+            int[] expectedNums = ArrayUtil.copy(nums);
 
-            actual(actualData);
-            expected(expectedData);
+            actual(actualNums);
+            expected(expectedNums);
 
-            ArrayUtil.equal(actualData, expectedData, data);
+            ArrayUtil.equal(actualNums, expectedNums, nums);
 
-        }, 1, ExecuteUtil.MILLION_TIMES, BubbleSort.class);
+        }, 1, ExecuteUtil.A_MILLION_TIMES, BubbleSort.class);
     }
 }
