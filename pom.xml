@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>xdo-lib</module>
+        <module>xdo-algo</module>
     </modules>
 
     <properties>
