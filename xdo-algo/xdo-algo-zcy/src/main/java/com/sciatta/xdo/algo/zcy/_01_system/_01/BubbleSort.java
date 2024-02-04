@@ -7,19 +7,18 @@ import com.sciatta.xdo.algo.zcy.support.RandomUtil;
 import java.util.Arrays;
 
 /**
- * Created by Rain on 2024/2/2<br>
+ * Created by Rain on 2024/2/4<br>
  * All Rights Reserved(C) 2017 - 2024 SCIATTA <br> <p/>
- * 选择排序
+ * 冒泡排序
  */
-public class SelectionSort {
-
+public class BubbleSort {
     public static void actual(int[] data) {
         for (int i = 0; i < data.length; i++) {
-            int minIndex = i;
-            for (int j = i + 1; j < data.length; j++) {
-                minIndex = data[minIndex] < data[j] ? minIndex : j;
+            for (int j = 0; j < data.length - 1; j++) {
+                if (data[j] > data[j + 1]) {
+                    ArrayUtil.swap(data, j, j + 1);
+                }
             }
-            ArrayUtil.swap(data, i, minIndex);
         }
     }
 
@@ -39,7 +38,6 @@ public class SelectionSort {
 
             ArrayUtil.equal(actualData, expectedData, data);
 
-        }, 1, ExecuteUtil.MILLION_TIMES, SelectionSort.class);
+        }, 1, ExecuteUtil.MILLION_TIMES, BubbleSort.class);
     }
-
 }

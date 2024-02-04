@@ -12,13 +12,13 @@ public class ExecuteUtilTests {
     public void testOneThreadExecute() {
         ExecuteUtil.execute(() -> {
             ExecuteUtil.sleep(RandomUtil.randomPositiveIntNumber(100));
-        }, 1, 100);
+        }, 1, 100, ExecuteUtilTests.class);
     }
 
     @Test
     public void testMoreThreadExecute() {
         ExecuteUtil.execute(() -> {
             ExecuteUtil.sleep(RandomUtil.randomPositiveIntNumber(100));
-        }, 3, 100);
+        }, 3, 100, ExecuteUtilTests.class);
     }
 }

@@ -15,7 +15,7 @@ public class ExecuteUtil {
      */
     public static final int MILLION_TIMES = 1000000;
 
-    public static void execute(Runnable runnable, int threads, int times) {
+    public static void execute(Runnable runnable, int threads, int times, Class<?> service) {
         AtomicLong l = new AtomicLong(0);
         long start = System.currentTimeMillis();
 
@@ -40,8 +40,8 @@ public class ExecuteUtil {
             throw new RuntimeException(e);
         }
 
-        PrintUtil.log("{} threads run {} times in total, cost {}ms",
-                threads, l.get(), (System.currentTimeMillis() - start));
+        PrintUtil.log("{} using {} threads run {} times in total, cost {}ms",
+                service.getSimpleName(), threads, l.get(), (System.currentTimeMillis() - start));
     }
 
     public static void sleep(int ms) {
