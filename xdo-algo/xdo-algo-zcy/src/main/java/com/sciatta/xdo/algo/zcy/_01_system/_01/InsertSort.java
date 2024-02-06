@@ -2,6 +2,7 @@ package com.sciatta.xdo.algo.zcy._01_system._01;
 
 import com.sciatta.xdo.algo.zcy.support.ArrayUtil;
 import com.sciatta.xdo.algo.zcy.support.ExecuteUtil;
+import com.sciatta.xdo.algo.zcy.support.PrintUtil;
 import com.sciatta.xdo.algo.zcy.support.RandomUtil;
 
 import java.util.Arrays;
@@ -38,7 +39,13 @@ public class InsertSort {
             actual(actualNums);
             expected(expectedNums);
 
-            ArrayUtil.equal(actualNums, expectedNums, nums);
+            if (!ArrayUtil.equal(actualNums, expectedNums)) {
+                PrintUtil.error("data: {}, actual: {}, expected: {}",
+                        ArrayUtil.toString(nums),
+                        ArrayUtil.toString(actualNums),
+                        ArrayUtil.toString(expectedNums));
+                ExecuteUtil.shutdown();
+            }
 
         }, 1, ExecuteUtil.A_MILLION_TIMES, InsertSort.class);
     }

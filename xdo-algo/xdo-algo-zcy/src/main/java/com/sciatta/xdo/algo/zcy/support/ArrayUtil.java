@@ -22,13 +22,7 @@ public class ArrayUtil {
         data[j] = temp;
     }
 
-    public static void equal(int[] actualData, int[] expectedData, int[] data) {
-        if (!Arrays.equals(actualData, expectedData)) {
-            PrintUtil.error("data: {}, actual: {}, expected: {}",
-                    toString(data),
-                    toString(actualData),
-                    toString(expectedData));
-            ExecuteUtil.shutdown();
-        }
+    public static boolean equal(int[] actualData, int[] expectedData) {
+        return Arrays.equals(actualData, expectedData);
     }
 }
