@@ -49,7 +49,7 @@ public class BinarySearchNearLeft {
             int e = expected(nums, num);
 
             if (a != e) {
-                PrintUtil.log("search >= {} near left from {}, expected is {}, but actual is {}",
+                PrintUtil.error("search >= {} near left from {}, expected is {}, but actual is {}",
                         num, ArrayUtil.toString(nums), e, a);
                 ExecuteUtil.shutdown();
             }

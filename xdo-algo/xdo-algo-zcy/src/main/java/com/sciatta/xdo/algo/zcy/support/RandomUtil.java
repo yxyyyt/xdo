@@ -16,6 +16,26 @@ public class RandomUtil {
         return (int) (Math.random() * (maxNumber + 1));
     }
 
+    public static int randomPositiveIntOddNumber(int maxNumber) {
+        int ans;
+
+        do {
+            ans = randomPositiveIntNumber(maxNumber);
+        } while (ans % 2 == 0);
+
+        return ans;
+    }
+
+    public static int randomPositiveIntEvenNumber(int maxNumber) {
+        int ans;
+
+        do {
+            ans = randomPositiveIntNumber(maxNumber);
+        } while (ans % 2 != 0);
+
+        return ans;
+    }
+
     public static int[] randomIntNumberArray(int maxSize, int maxNumber) {
         int size = randomPositiveIntNumber(maxSize);
         int[] nums = new int[size];

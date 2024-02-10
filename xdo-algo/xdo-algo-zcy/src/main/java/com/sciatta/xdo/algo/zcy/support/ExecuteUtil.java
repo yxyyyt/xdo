@@ -50,8 +50,10 @@ public class ExecuteUtil {
             throw new RuntimeException(e);
         }
 
-        PrintUtil.log("{} using {} threads run {} times in total, cost {}ms",
+        PrintUtil.error("**********************************************************************");
+        PrintUtil.error("{} using {} threads run {} times in total, cost {}ms",
                 service.getSimpleName(), threads, l.get(), (System.currentTimeMillis() - start));
+        PrintUtil.error("**********************************************************************");
     }
 
     public static void sleep(int ms) {

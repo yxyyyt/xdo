@@ -25,4 +25,13 @@ public class ArrayUtil {
     public static boolean equal(int[] actualData, int[] expectedData) {
         return Arrays.equals(actualData, expectedData);
     }
+
+
+
+    public static void shuffle(int[] nums) {
+        for (int i = 0; i < nums.length; i++) {
+            int b = RandomUtil.randomPositiveIntNumber(nums.length - 1);
+            swap(nums, i, b);
+        }
+    }
 }

@@ -104,4 +104,20 @@ public class RandomUtilTests {
         }, 1, ExecuteUtil.A_MILLION_TIMES, RandomUtilTests.class);
     }
 
+    @Test
+    public void testRandomPositiveIntOddNumber() {
+        ExecuteUtil.execute(() -> {
+            int i = RandomUtil.randomPositiveIntOddNumber(100);
+            PrintUtil.log(String.valueOf(i));
+        }, 1, 10, RandomUtilTests.class);
+    }
+
+    @Test
+    public void testRandomPositiveIntEvenNumber() {
+        ExecuteUtil.execute(() -> {
+            int i = RandomUtil.randomPositiveIntEvenNumber(100);
+            PrintUtil.log(String.valueOf(i));
+        }, 1, 10, RandomUtilTests.class);
+    }
+
 }

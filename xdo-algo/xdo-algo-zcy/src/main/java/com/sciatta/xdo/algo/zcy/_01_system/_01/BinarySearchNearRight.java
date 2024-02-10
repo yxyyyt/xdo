@@ -52,7 +52,7 @@ public class BinarySearchNearRight {
             int e = expected(nums, num);
 
             if (a != e) {
-                PrintUtil.log("search <= {} near right from {}, expected is {}, but actual is {}",
+                PrintUtil.error("search <= {} near right from {}, expected is {}, but actual is {}",
                         num, ArrayUtil.toString(nums), e, a);
                 ExecuteUtil.shutdown();
             }
