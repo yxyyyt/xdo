@@ -11,6 +11,7 @@
     <modules>
         <module>xdo-lib</module>
         <module>xdo-algo</module>
+        <module>xdo-jdk</module>
     </modules>
 
     <properties>
