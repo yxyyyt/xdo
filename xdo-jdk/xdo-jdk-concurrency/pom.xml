@@ -5,16 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.sciatta.xdo</groupId>
-        <artifactId>xdo</artifactId>
+        <artifactId>xdo-jdk</artifactId>
         <version>${revision}</version>
     </parent>
 
-    <artifactId>xdo-jdk</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>xdo-jdk-jvm</module>
-        <module>xdo-jdk-concurrency</module>
-    </modules>
+    <artifactId>xdo-jdk-concurrency</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
